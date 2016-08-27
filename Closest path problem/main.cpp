@@ -1,7 +1,7 @@
 #include "stack.h"
 #include <iostream>
 #include <Windows.h>
-
+#include <vld.h>
 
 using namespace std;
 
@@ -21,7 +21,9 @@ int main() {
 
 	do {
 		number = number_stack.pop();
-		cout << number << "\n";
+		if (number != -1) {
+			cout << number << "\n";
+		}
 
 	} while (number != -1);
 
