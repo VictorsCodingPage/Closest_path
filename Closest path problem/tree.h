@@ -1,19 +1,21 @@
 #pragma once
 #include "node.h"
+#include "list.h"
 
 class tree {
 public:
-	void add(int new_node, int to_node);
+	void add(int value);
 	void remove(int old_node);
-	bool traverse(int value, node* path);
-	bool exists_in(int value, int* list, int list_size);
+	bool find(int value);
+	void traverse();
 
 	tree();
 	~tree();
 
 private:
+	node* first_node;
 	node* tracker;
 	int tree_size;
 	int list_size;
-	int* search_list;
+	mlist search_list;
 };
